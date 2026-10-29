@@ -1,0 +1,136 @@
+{
+  "version": "1.0.0",
+  "github_repo": "sjgarani/gh-project-doc-toolkit",
+  "doc_root": ".",
+  "types": {
+    "adr": {
+      "name": "Architecture Decision Record",
+      "dir": "adrs",
+      "prefix": "ADR",
+      "digits": 4,
+      "template": "adrs/template.md",
+      "workflow": "adrs/workflow.md",
+      "statuses": [
+        "DRAFT",
+        "PROPOSED",
+        "ACCEPTED",
+        "REJECTED",
+        "SUPERSEDED",
+        "DEPRECATED"
+      ],
+      "initial_status": "DRAFT",
+      "transitions": {
+        "DRAFT": [
+          "PROPOSED",
+          "REJECTED"
+        ],
+        "PROPOSED": [
+          "ACCEPTED",
+          "REJECTED",
+          "DRAFT"
+        ],
+        "ACCEPTED": [
+          "SUPERSEDED",
+          "DEPRECATED"
+        ],
+        "REJECTED": [
+          "DRAFT",
+          "PROPOSED"
+        ],
+        "SUPERSEDED": [],
+        "DEPRECATED": []
+      }
+    },
+    "rfc": {
+      "name": "Request for Comments",
+      "dir": "rfcs",
+      "prefix": "RFC",
+      "digits": 4,
+      "template": "rfcs/template.md",
+      "workflow": "rfcs/workflow.md",
+      "statuses": [
+        "DRAFT",
+        "REVIEW",
+        "ACCEPTED",
+        "IMPLEMENTED",
+        "REJECTED",
+        "WITHDRAWN",
+        "SUPERSEDED"
+      ],
+      "initial_status": "DRAFT",
+      "transitions": {
+        "DRAFT": [
+          "REVIEW",
+          "WITHDRAWN"
+        ],
+        "REVIEW": [
+          "ACCEPTED",
+          "REJECTED",
+          "WITHDRAWN",
+          "DRAFT"
+        ],
+        "ACCEPTED": [
+          "IMPLEMENTED",
+          "SUPERSEDED",
+          "REJECTED"
+        ],
+        "IMPLEMENTED": [
+          "SUPERSEDED"
+        ],
+        "REJECTED": [
+          "DRAFT"
+        ],
+        "WITHDRAWN": [
+          "DRAFT"
+        ],
+        "SUPERSEDED": []
+      }
+    },
+    "spec": {
+      "name": "Technical Specification",
+      "dir": "specs",
+      "prefix": "SPEC",
+      "digits": 4,
+      "template": "specs/template.md",
+      "workflow": "specs/workflow.md",
+      "statuses": [
+        "DRAFT",
+        "REVIEW",
+        "APPROVED",
+        "IN_PROGRESS",
+        "RESOLVED",
+        "CLOSED"
+      ],
+      "initial_status": "DRAFT",
+      "transitions": {
+        "DRAFT": [
+          "REVIEW",
+          "CLOSED"
+        ],
+        "REVIEW": [
+          "APPROVED",
+          "DRAFT",
+          "CLOSED"
+        ],
+        "APPROVED": [
+          "IN_PROGRESS",
+          "REVIEW",
+          "CLOSED"
+        ],
+        "IN_PROGRESS": [
+          "RESOLVED",
+          "APPROVED",
+          "CLOSED"
+        ],
+        "RESOLVED": [
+          "CLOSED",
+          "IN_PROGRESS"
+        ],
+        "CLOSED": [
+          "DRAFT",
+          "REVIEW"
+        ]
+      }
+    }
+  }
+}

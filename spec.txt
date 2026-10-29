@@ -1,0 +1,15 @@
+## Projeto
+gh-project-doc-toolkit
+
+## O que se quer
+Um projeto que será usado como subtree para outro projeto do git, e sua função será carregar nele a estrutura de documentação com uma ferramanta que vai associar o projeto com um projeto do Github e dele será colocado dendro da pasta doc. Terá a documentação no padrão ADR associada a pull request e a ferramaneta irá gerenciar tanto o pull request como o workflow da ADR, para a ADR terá um README.md para orientar como usar e um arquivo workflow.md para definir o workflow aceito para a ADR. E para pull request e issues usar o melhor padrão para representá-los, pode ser até o mesmo. Lembrando que os mesmo precisam ter junto o workflow.md para definir como serão gerenciados, e a ferramante fará isso também. Um detalhe para todos os documentos que tem workflow adicionar o comentário para deixar a parte para ser administrada pela ferramanta. A documentação precisa está em inglês. A ferramanta tem que ter a opções de visualizar o status dos documentos separado por linha(doc) e colunas status de todos os tipos e de forma individual também. E colocar nos documentos derenciados uma sessão de histórico.
+
+## estrutura
+|
+- adrs 
+-- tamplate.md 
+-- workflow.md
+- (outros tipos de doc)  
+-- (mesmo acima)  
+- tools
+- README.md. 
